@@ -181,6 +181,97 @@
           <p class="muted" style="margin-top:0.6em">Edit in VS Code, Notepad++, or any text editor.</p>
         </section>
 
+        <!-- ─── GIT SETUP ────────────────────────────────────────────── -->
+        <section>
+          <section>
+            <span class="big-emoji">🐙</span>
+            <h2>Getting Started with Git</h2>
+            <p style="font-size:0.82em">Git lets every team save and share their work without overwriting each other.<br/>Follow these steps <strong>once</strong> at the start of the challenge.</p>
+          </section>
+
+          <section>
+            <h3>Step 0 — Check Git is installed</h3>
+            <p style="font-size:0.78em">Open a terminal and run:</p>
+            <pre><code class="language-bash">git --version</code></pre>
+            <p style="font-size:0.78em">You should see a version number. If not, download Git from <strong>https://git-scm.com/downloads</strong> and run the installer, then come back here.</p>
+          </section>
+
+          <section>
+            <h3>Step 1 — Clone the repository</h3>
+            <p style="font-size:0.78em">This downloads all the challenge files to your computer.</p>
+            <pre><code class="language-bash">git clone https://github.com/&lt;org-or-user&gt;/reveal_js_CodeChallenge.git</code></pre>
+            <div class="hint-box">💡 Replace <code>&lt;org-or-user&gt;</code> with the GitHub username your mentor gives you.</div>
+            <p style="font-size:0.78em; margin-top:0.6em">Then move into the project folder:</p>
+            <pre><code class="language-bash">cd reveal_js_CodeChallenge</code></pre>
+          </section>
+
+          <section>
+            <h3>Step 2 — Create your team folder</h3>
+            <p style="font-size:0.78em">Each team works in their own folder — no spaces in the name, use hyphens.</p>
+            <pre><code class="language-bash">mkdir teams/team-&lt;your-team-name&gt;</code></pre>
+            <p style="font-size:0.78em">Then copy the starter files into it:</p>
+            <pre><code class="language-bash">cp quiz.html quiz.css quiz.js hints.md teams/team-&lt;your-team-name&gt;/</code></pre>
+            <div class="hint-box">📁 Work <strong>only inside your team folder</strong> from this point on. Never edit the files in the project root.</div>
+          </section>
+
+          <section>
+            <h3>Step 3 — Save your work (end of session)</h3>
+            <p style="font-size:0.75em">Run these three commands at the <strong>end of every session</strong>:</p>
+            <pre><code class="language-bash"># 1 — Stage your changes
+git add teams/team-&lt;your-team-name&gt;/
+
+# 2 — Commit with a message
+git commit -m "Day 1: completed HTML structure and CSS styling"
+
+# 3 — Push to GitHub
+git push origin main</code></pre>
+            <div class="hint-box">Write a short, honest commit message — future-you will thank you!</div>
+          </section>
+
+          <section>
+            <h3>Step 4 — Pull at the start of each session</h3>
+            <p style="font-size:0.78em">If you're on a different computer, or picking up where a team-mate left off:</p>
+            <pre><code class="language-bash">git pull origin main</code></pre>
+            <div class="hint-box">Always <strong>pull before you push</strong> to avoid conflicts with other teams.</div>
+          </section>
+
+          <section>
+            <h3>Daily workflow — quick reference</h3>
+            <pre><code class="language-bash"># ── START of session ──────────────────
+git pull origin main
+
+# ... edit files in your team folder ...
+
+# ── END of session ────────────────────
+git add teams/team-&lt;your-team-name&gt;/
+git commit -m "Short description of what you did"
+git push origin main</code></pre>
+          </section>
+
+          <section>
+            <h3>Troubleshooting Git</h3>
+            <div style="text-align:left; max-width:620px; margin: 0 auto; font-size:0.72em;">
+              <div class="step-box">
+                <strong>Permission denied</strong> when pushing<br/>
+                <code>git config --global user.email "you@example.com"</code>
+              </div>
+              <div class="step-box">
+                <strong>error: failed to push</strong> (rejected)<br/>
+                Someone else pushed first — run <code>git pull origin main</code> then push again.
+              </div>
+              <div class="step-box">
+                <strong>fatal: not a git repository</strong><br/>
+                Wrong folder — run <code>cd reveal_js_CodeChallenge</code> first.
+              </div>
+              <div class="step-box">
+                <strong>Accidentally edited the wrong file</strong><br/>
+                <code>git diff</code> to see changes, then <code>git checkout -- &lt;filename&gt;</code> to undo.
+              </div>
+            </div>
+            <div class="hint-box" style="max-width:620px; margin: 0.6em auto 0;">🆘 If you're stuck on Git, ask a mentor <em>before</em> running any other commands.</div>
+          </section>
+        </section>
+
         <!-- ─── STEP 1 ─────────────────────────────────────────────── -->
         <section>
           <section>
