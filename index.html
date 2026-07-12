@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Space Quiz — Coding Challenge</title>
+
+    <!-- reveal.js via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/night.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+
+    <style>
+      :root { --accent: #7ec8e3; --green: #7dff8a; --yellow: #ffe66d; --red: #ff6b6b; }
+
+      .reveal h1 { font-size: 2em; color: var(--accent); }
+      .reveal h2 { font-size: 1.5em; color: var(--accent); }
+      .reveal h3 { font-size: 1.1em; color: var(--yellow); margin-bottom: 0.3em; }
+
+      .badge {
+        display: inline-block;
+        padding: 3px 12px;
+        border-radius: 12px;
+        font-size: 0.7em;
+        font-weight: bold;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+      .badge-html  { background: #e44d26; color: #fff; }
+      .badge-css   { background: #264de4; color: #fff; }
+      .badge-js    { background: #f7df1e; color: #000; }
+      .badge-bonus { background: #7dff8a; color: #000; }
+      .badge-time  { background: #555; color: #fff; }
+
+      .step-box {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 10px;
+        padding: 0.7em 1em;
+        margin: 0.4em 0;
+        text-align: left;
+        font-size: 0.8em;
+      }
+      .step-box code { color: var(--yellow); background: transparent; }
+
+      .hint-box {
+        background: rgba(255,230,109,0.12);
+        border-left: 4px solid var(--yellow);
+        border-radius: 4px;
+        padding: 0.5em 1em;
+        text-align: left;
+        font-size: 0.78em;
+        margin-top: 0.6em;
+      }
+
+      .goal-list { list-style: none; padding: 0; text-align: left; font-size: 0.82em; }
+      .goal-list li { padding: 0.2em 0; }
+      .goal-list li::before { content: "✅ "; }
+
+      .timeline { display: flex; gap: 0.6em; justify-content: center; flex-wrap: wrap; margin-top: 0.6em; }
+      .tl-item {
+        background: rgba(126,200,227,0.12);
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        padding: 0.4em 0.8em;
+        font-size: 0.72em;
+        text-align: center;
+        min-width: 110px;
+      }
+      .tl-item strong { display: block; color: var(--accent); }
+
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; text-align: left; font-size: 0.78em; }
+
+      .reveal pre { font-size: 0.72em; }
+      .reveal section { font-size: 0.95em; }
+
+      .big-emoji { font-size: 2.5em; display: block; margin-bottom: 0.2em; }
+      .muted { color: #aaa; font-size: 0.78em; }
+
+      .stretch-card {
+        background: rgba(126,200,227,0.09);
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        padding: 0.5em 0.9em;
+        font-size: 0.78em;
+        text-align: left;
+        margin: 0.3em 0;
+      }
+      .stretch-card strong { color: var(--accent); }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- ─── TITLE ─────────────────────────────────────────────── -->
+        <section>
+          <span class="big-emoji">🚀</span>
+          <h1>Build a Space Quiz!</h1>
+          <p>A group coding challenge in HTML, CSS &amp; JavaScript</p>
+          <p class="muted">&nbsp; 2–3 hours &nbsp;|&nbsp; Beginner friendly</p>
+        </section>
+
+        <!-- ─── WHAT YOU'LL BUILD ─────────────────────────────────── -->
+        <section>
+          <h2>What You'll Build 🛸</h2>
+          <p style="font-size:0.82em">An interactive quiz about space — fully in the browser, no installs needed.</p>
+          <ul class="goal-list" style="margin: 0.6em auto; max-width: 520px;">
+            <li>Multiple-choice questions with instant feedback</li>
+            <li>A live score counter</li>
+            <li>A results screen at the end</li>
+            <li>Your own custom styling</li>
+          </ul>
+          <p class="muted" style="margin-top:0.8em">You'll finish with a working app you can run in any browser.</p>
+        </section>
+
+        <!-- ─── HOW TO WORK AS A GROUP ────────────────────────────── -->
+        <section>
+          <h2>How to Work as a Group 🤝</h2>
+          <div class="two-col" style="max-width:620px; margin: 0.6em auto 0;">
+            <div class="step-box">
+              <strong>👑 Driver</strong><br/>
+              Types the code on the shared computer.
+              Rotate every 20 minutes!
+            </div>
+            <div class="step-box">
+              <strong>🧭 Navigator</strong><br/>
+              Reads the instructions aloud,
+              spots typos, checks the hints.
+            </div>
+            <div class="step-box">
+              <strong>🔍 Researcher</strong><br/>
+              Looks up anything confusing
+              (MDN, hint file, or ask your mentor).
+            </div>
+            <div class="step-box">
+              <strong>🧪 Tester</strong><br/>
+              Refreshes the browser, reports
+              what works and what doesn't.
+            </div>
+          </div>
+          <p class="muted" style="margin-top:0.6em">Everyone should understand every line before moving on.</p>
+        </section>
+
+        <!-- ─── TIMELINE ──────────────────────────────────────────── -->
+        <section>
+          <h2>Today's Timeline ⏱️</h2>
+          <div class="timeline">
+            <div class="tl-item"><strong>0:00 – 0:20</strong>Step 1<br/>HTML skeleton</div>
+            <div class="tl-item"><strong>0:20 – 0:45</strong>Step 2<br/>CSS styling</div>
+            <div class="tl-item"><strong>0:45 – 1:20</strong>Step 3<br/>Quiz logic (JS)</div>
+            <div class="tl-item"><strong>1:20 – 1:50</strong>Step 4<br/>Score + results</div>
+            <div class="tl-item"><strong>1:50 – 2:30</strong>Step 5<br/>Stretch goals</div>
+            <div class="tl-item"><strong>2:30 – end</strong>🎉<br/>Demo + share!</div>
+          </div>
+          <p class="muted" style="margin-top:0.7em">Stuck? Skip ahead, check <code>hints.md</code>, or ask a mentor.</p>
+        </section>
+
+        <!-- ─── FILES OVERVIEW ────────────────────────────────────── -->
+        <section>
+          <h2>Your Files 📁</h2>
+          <div style="text-align:left; max-width:540px; margin: 0 auto; font-size:0.82em;">
+            <div class="step-box">
+              <code>quiz.html</code> — your starter page (open this in the browser)
+            </div>
+            <div class="step-box">
+              <code>quiz.css</code> — all your styles live here
+            </div>
+            <div class="step-box">
+              <code>quiz.js</code> — all your JavaScript lives here
+            </div>
+            <div class="step-box">
+              <code>hints.md</code> — stuck? read this first!
+            </div>
+            <div class="step-box">
+              <code>solution/</code> — only peek if really stuck 😅
+            </div>
+          </div>
+          <p class="muted" style="margin-top:0.6em">Edit in VS Code, Notepad++, or any text editor.</p>
+        </section>
+
+        <!-- ─── STEP 1 ─────────────────────────────────────────────── -->
+        <section>
+          <section>
+            <h2>Step 1 — HTML Skeleton <span class="badge badge-html">HTML</span> <span class="badge badge-time">~20 min</span></h2>
+            <p style="font-size:0.8em">Open <code>quiz.html</code>. You'll see placeholders like <code>/* YOUR CODE HERE */</code>.<br/>Your job: fill them in!</p>
+            <div class="hint-box">
+              <strong>🎯 Goal:</strong> The page loads in the browser with a heading, a question area, four answer buttons, and a score display — no styling yet, that's fine!
+            </div>
+          </section>
+
+          <section>
+            <h3>1a — Link your files</h3>
+            <p style="font-size:0.78em">Inside <code>&lt;head&gt;</code>, add a <code>&lt;link&gt;</code> for your CSS and at the bottom of <code>&lt;body&gt;</code>, add a <code>&lt;script&gt;</code> for your JS.</p>
+            <pre><code class="language-html">&lt;!-- In &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="quiz.css" /&gt;
+
+&lt;!-- Just before &lt;/body&gt; --&gt;
+&lt;script src="quiz.js"&gt;&lt;/script&gt;</code></pre>
+          </section>
+
+          <section>
+            <h3>1b — Build the quiz container</h3>
+            <p style="font-size:0.78em">Inside <code>&lt;body&gt;</code>, create this structure:</p>
+            <pre><code class="language-html">&lt;div id="quiz-container"&gt;
+  &lt;h1&gt;🚀 Space Quiz&lt;/h1&gt;
+
+  &lt;div id="question-area"&gt;
+    &lt;p id="question-text"&gt;Question goes here&lt;/p&gt;
+    &lt;div id="answers"&gt;
+      &lt;!-- buttons will be added by JavaScript --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div id="score-area"&gt;
+    Score: &lt;span id="score"&gt;0&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div id="result-area" class="hidden"&gt;
+    &lt;h2 id="result-text"&gt;&lt;/h2&gt;
+    &lt;button id="restart-btn"&gt;Play Again&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <div class="hint-box">Save and open <code>quiz.html</code> in the browser. Can you see the heading and "Score: 0"?</div>
+          </section>
+        </section>
+
+        <!-- ─── STEP 2 ─────────────────────────────────────────────── -->
+        <section>
+          <section>
+            <h2>Step 2 — CSS Styling <span class="badge badge-css">CSS</span> <span class="badge badge-time">~25 min</span></h2>
+            <p style="font-size:0.8em">Open <code>quiz.css</code> and make your quiz look like a real app.<br/>No right answer here — experiment!</p>
+            <div class="hint-box">
+              <strong>🎯 Goal:</strong> Centred layout, readable text, styled buttons that change colour when hovered.
+            </div>
+          </section>
+
+          <section>
+            <h3>2a — Page &amp; container</h3>
+            <pre><code class="language-css">body {
+  font-family: Arial, sans-serif;
+  background-color: #0a0a2e; /* dark space blue */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+#quiz-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}</code></pre>
+          </section>
+
+          <section>
+            <h3>2b — Buttons</h3>
+            <pre><code class="language-css">.answer-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  font-size: 1rem;
+  border: 2px solid #7ec8e3;
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.answer-btn:hover {
+  background-color: #7ec8e3;
+  color: #000000;
+}</code></pre>
+            <div class="hint-box">Also add <code>.correct</code> (green border) and <code>.wrong</code> (red border) classes — you'll use them in Step 3.</div>
+          </section>
+
+          <section>
+            <h3>2c — Hidden helper &amp; result area</h3>
+            <pre><code class="language-css">.hidden {
+  display: none;
+}
+
+#result-area {
+  margin-top: 30px;
+}
+
+#restart-btn {
+  margin-top: 16px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  background: #7ec8e3;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}</code></pre>
+            <div class="hint-box">Save and refresh — the page should now look much better!</div>
+          </section>
+        </section>
+
+        <!-- ─── STEP 3 ─────────────────────────────────────────────── -->
+        <section>
+          <section>
+            <h2>Step 3 — Quiz Logic <span class="badge badge-js">JS</span> <span class="badge badge-time">~35 min</span></h2>
+            <p style="font-size:0.8em">Open <code>quiz.js</code>. This is the most important step.<br/>You'll write JavaScript to show questions and check answers.</p>
+            <div class="hint-box">
+              <strong>🎯 Goal:</strong> Clicking a button highlights it green/red and advances to the next question automatically.
+            </div>
+          </section>
+
+          <section>
+            <h3>3a — The questions array</h3>
+            <p style="font-size:0.75em">An <em>array</em> is a list. Each item is an <em>object</em> with three properties.</p>
+            <pre><code class="language-js">const questions = [
+  {
+    question: "How many planets are in our solar system?",
+    answers:  ["7", "8", "9", "10"],
+    correct:  1          // index of the right answer (0 = first)
+  },
+  {
+    question: "What is the closest star to Earth?",
+    answers:  ["Sirius", "Betelgeuse", "The Sun", "Proxima Centauri"],
+    correct:  2
+  },
+  {
+    question: "On which planet is the largest volcano?",
+    answers:  ["Earth", "Venus", "Jupiter", "Mars"],
+    correct:  3
+  },
+  {
+    question: "Approximately how old is the universe?",
+    answers:  ["4.5 billion years", "13.8 billion years",
+               "1 billion years",   "100 billion years"],
+    correct:  1
+  },
+  {
+    question: "What force keeps planets in orbit around the Sun?",
+    answers:  ["Magnetism", "Friction", "Gravity", "Electricity"],
+    correct:  2
+  }
+];</code></pre>
+            <div class="hint-box">💡 Add your own questions later in Step 5!</div>
+          </section>
+
+          <section>
+            <h3>3b — State variables &amp; grabbing elements</h3>
+            <pre><code class="language-js">let currentQuestion = 0;
+let score = 0;
+
+const questionText  = document.getElementById("question-text");
+const answersDiv    = document.getElementById("answers");
+const scoreDisplay  = document.getElementById("score");
+const questionArea  = document.getElementById("question-area");
+const resultArea    = document.getElementById("result-area");
+const resultText    = document.getElementById("result-text");
+const restartBtn    = document.getElementById("restart-btn");</code></pre>
+            <p style="font-size:0.72em; color:#aaa">
+              <code>document.getElementById()</code> finds an HTML element by its <code>id</code> attribute so we can change it with JavaScript.
+            </p>
+          </section>
+
+          <section>
+            <h3>3c — showQuestion()</h3>
+            <pre><code class="language-js">function showQuestion() {
+  const q = questions[currentQuestion];
+
+  // Update the question text
+  questionText.textContent = q.question;
+
+  // Clear old buttons
+  answersDiv.innerHTML = "";
+
+  // Create a button for each answer
+  q.answers.forEach(function(answerText, index) {
+    const btn = document.createElement("button");
+    btn.textContent = answerText;
+    btn.classList.add("answer-btn");
+
+    btn.addEventListener("click", function() {
+      checkAnswer(index);
+    });
+
+    answersDiv.appendChild(btn);
+  });
+}</code></pre>
+          </section>
+
+          <section>
+            <h3>3d — checkAnswer()</h3>
+            <pre><code class="language-js">function checkAnswer(selectedIndex) {
+  const q = questions[currentQuestion];
+
+  // Disable all buttons so the player can't click again
+  const buttons = answersDiv.querySelectorAll(".answer-btn");
+  buttons.forEach(function(btn) { btn.disabled = true; });
+
+  if (selectedIndex === q.correct) {
+    score++;
+    scoreDisplay.textContent = score;
+    buttons[selectedIndex].classList.add("correct");
+  } else {
+    buttons[selectedIndex].classList.add("wrong");
+    buttons[q.correct].classList.add("correct"); // show right answer
+  }
+
+  // Wait 1.2 seconds then move on
+  setTimeout(nextQuestion, 1200);
+}</code></pre>
+          </section>
+
+          <section>
+            <h3>3e — nextQuestion() &amp; start</h3>
+            <pre><code class="language-js">function nextQuestion() {
+  currentQuestion++;
+
+  if (currentQuestion &lt; questions.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+}
+
+// Kick everything off!
+showQuestion();</code></pre>
+            <div class="hint-box">Save and refresh. Can you answer a question and see the correct one highlighted? 🎉</div>
+          </section>
+        </section>
+
+        <!-- ─── STEP 4 ─────────────────────────────────────────────── -->
+        <section>
+          <section>
+            <h2>Step 4 — Results Screen <span class="badge badge-js">JS</span> <span class="badge badge-time">~30 min</span></h2>
+            <p style="font-size:0.8em">Show the player how they did at the end, with a personalised message and a "Play Again" button.</p>
+            <div class="hint-box">
+              <strong>🎯 Goal:</strong> After the last question the quiz area hides and a result screen appears with the score and a message.
+            </div>
+          </section>
+
+          <section>
+            <h3>4a — showResult()</h3>
+            <pre><code class="language-js">function showResult() {
+  // Hide questions, show result area
+  questionArea.classList.add("hidden");
+  resultArea.classList.remove("hidden");
+
+  const total = questions.length;
+  let message = "";
+
+  if (score === total) {
+    message = "🌟 Perfect score! You're a space genius!";
+  } else if (score >= total / 2) {
+    message = "🚀 Great job! " + score + "/" + total + " — keep exploring!";
+  } else {
+    message = "🌍 " + score + "/" + total + " — revise and try again!";
+  }
+
+  resultText.textContent = message;
+}</code></pre>
+          </section>
+
+          <section>
+            <h3>4b — restartQuiz()</h3>
+            <pre><code class="language-js">function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  scoreDisplay.textContent = 0;
+
+  questionArea.classList.remove("hidden");
+  resultArea.classList.add("hidden");
+
+  showQuestion();
+}
+
+restartBtn.addEventListener("click", restartQuiz);</code></pre>
+            <div class="hint-box">Finish all questions. Does the result screen appear? Does "Play Again" reset everything?</div>
+          </section>
+        </section>
+
+        <!-- ─── STEP 5 STRETCH ────────────────────────────────────── -->
+        <section>
+          <section>
+            <h2>Step 5 — Stretch Goals <span class="badge badge-bonus">BONUS</span> <span class="badge badge-time">~40 min</span></h2>
+            <p style="font-size:0.8em">Core quiz done? Pick any of these to level it up. Do them in any order!</p>
+          </section>
+
+          <section>
+            <h3>Choose your challenge</h3>
+            <div class="stretch-card">
+              <strong>⭐ Question Counter</strong> — Show "Question 2 of 5" above each question.<br/>
+              <span class="muted">Hint: use <code>currentQuestion + 1</code> and <code>questions.length</code></span>
+            </div>
+            <div class="stretch-card">
+              <strong>⭐ Shuffle Questions</strong> — Randomise the order every time.<br/>
+              <span class="muted">Hint: look up the Fisher-Yates shuffle, or ask a mentor</span>
+            </div>
+            <div class="stretch-card">
+              <strong>⭐ Timer</strong> — Add a 15-second countdown per question.<br/>
+              <span class="muted">Hint: <code>setInterval</code> and <code>clearInterval</code></span>
+            </div>
+            <div class="stretch-card">
+              <strong>⭐ Your Own Questions</strong> — Replace (or add to) the questions array with your own space facts.<br/>
+              <span class="muted">Hint: keep the same object structure</span>
+            </div>
+            <div class="stretch-card">
+              <strong>⭐⭐ High Score</strong> — Save the best score using <code>localStorage</code> and display it.<br/>
+              <span class="muted">Hint: <code>localStorage.setItem("best", score)</code></span>
+            </div>
+            <div class="stretch-card">
+              <strong>⭐⭐ Progress Bar</strong> — Show a bar that fills as questions are answered.<br/>
+              <span class="muted">Hint: use a <code>&lt;div&gt;</code> and change its <code>width</code> with JS</span>
+            </div>
+          </section>
+        </section>
+
+        <!-- ─── DEMO TIME ──────────────────────────────────────────── -->
+        <section>
+          <span class="big-emoji">🎉</span>
+          <h2>Demo Time!</h2>
+          <p style="font-size:0.82em">Each group gets <strong>2 minutes</strong> to show their quiz.</p>
+          <ul class="goal-list" style="max-width:460px; margin: 0.6em auto;">
+            <li>Show the quiz running in the browser</li>
+            <li>Explain one piece of code you're proud of</li>
+            <li>Share one thing that was tricky</li>
+            <li>Shout out a team-mate who helped</li>
+          </ul>
+        </section>
+
+        <!-- ─── WHAT YOU LEARNED ───────────────────────────────────── -->
+        <section>
+          <h2>What You Learned Today 🧠</h2>
+          <div class="two-col" style="max-width:600px; margin: 0.6em auto;">
+            <div class="step-box">
+              <strong style="color:#e44d26">HTML</strong><br/>
+              Structuring a page with elements and IDs
+            </div>
+            <div class="step-box">
+              <strong style="color:#264de4">CSS</strong><br/>
+              Styling, layout with flexbox, hover effects
+            </div>
+            <div class="step-box">
+              <strong style="color:#f7df1e">JS — Data</strong><br/>
+              Arrays, objects, variables, <code>const</code> / <code>let</code>
+            </div>
+            <div class="step-box">
+              <strong style="color:#f7df1e">JS — DOM</strong><br/>
+              <code>getElementById</code>, <code>textContent</code>, <code>classList</code>
+            </div>
+            <div class="step-box">
+              <strong style="color:#f7df1e">JS — Events</strong><br/>
+              <code>addEventListener</code>, <code>setTimeout</code>
+            </div>
+            <div class="step-box">
+              <strong style="color:#7dff8a">Teamwork</strong><br/>
+              Driver / navigator, debugging together
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── WHAT NEXT ──────────────────────────────────────────── -->
+        <section>
+          <h2>What's Next? 🌌</h2>
+          <div style="text-align:left; max-width:520px; margin: 0.4em auto; font-size:0.8em;">
+            <div class="step-box">🌐 <strong>freeCodeCamp.org</strong> — free, self-paced web dev course</div>
+            <div class="step-box">📘 <strong>MDN Web Docs</strong> — the best JavaScript reference (developer.mozilla.org)</div>
+            <div class="step-box">🎮 <strong>CS50</strong> — Harvard's free intro computer science course</div>
+            <div class="step-box">🛠️ <strong>Build something real</strong> — change the topic to your favourite subject and share the quiz with friends!</div>
+          </div>
+          <p style="margin-top:0.8em; font-size:1.4em">Keep building. You're already doing it. 🚀</p>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        transition: "slide",
+        plugins: [ RevealHighlight ]
+      });
+    </script>
+  </body>
+</html>

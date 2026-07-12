@@ -1,0 +1,87 @@
+/* =====================================================
+   SPACE QUIZ — Stylesheet
+   Step 2: fill in the TODOs below to style your quiz.
+   ===================================================== */
+
+
+/* --- Page background & layout --- */
+body {
+  font-family: Arial, sans-serif;
+
+  /* TODO (Step 2a): Set background-color to a dark space colour, e.g. #0a0a2e */
+  background-color: /* YOUR COLOUR HERE */;
+
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+
+/* --- Quiz container --- */
+#quiz-container {
+  /* TODO (Step 2a): Limit the width so it doesn't stretch too wide */
+  max-width: /* YOUR VALUE HERE */;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* --- Answer buttons --- */
+.answer-btn {
+  display: block;
+  width: 100%;
+
+  /* TODO (Step 2b): Add padding, margin, font-size, and border */
+  padding: /* YOUR VALUE */;
+  margin: /* YOUR VALUE */;
+  font-size: /* YOUR VALUE */;
+
+  border: 2px solid #7ec8e3;
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* TODO (Step 2b): Style the hover state of .answer-btn */
+.answer-btn:hover {
+  background-color: /* YOUR VALUE */;
+  color: /* YOUR VALUE */;
+}
+
+
+/* --- Correct / Wrong feedback classes --- */
+/* TODO (Step 2b): Add a green border for correct answers */
+.correct {
+  border-color: /* YOUR COLOUR */;
+}
+
+/* TODO (Step 2b): Add a red border for wrong answers */
+.wrong {
+  border-color: /* YOUR COLOUR */;
+}
+
+
+/* --- Hidden utility class (DO NOT REMOVE) --- */
+.hidden {
+  display: none;
+}
+
+
+/* --- Result area & restart button --- */
+#result-area {
+  margin-top: 30px;
+}
+
+/* TODO (Step 2c): Style the #restart-btn button */
+#restart-btn {
+  margin-top: 16px;
+  padding: /* YOUR VALUE */;
+  font-size: 1rem;
+  background: /* YOUR COLOUR */;
+  color: /* YOUR COLOUR */;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
