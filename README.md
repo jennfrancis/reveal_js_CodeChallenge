@@ -7,8 +7,48 @@ Students will build an interactive space-themed quiz in HTML, CSS and JavaScript
 
 ### Prerequisites
 - A computer with any modern browser (Chrome, Firefox, Edge, Safari)
-- Setup [VSCode](https://code.visualstudio.com/). 
+- **VS Code** installed — see the setup steps below
 - No internet required once files are downloaded (all CDN links only used by `index.html`)
+
+---
+
+## Setting Up VS Code
+
+Visual Studio Code (VS Code) is a free, lightweight code editor that works on Windows, Mac, and Linux.
+
+### Step 1: Download VS Code
+
+Go to **https://code.visualstudio.com/** and click the big download button for your operating system.
+
+### Step 2: Install VS Code
+
+**Windows:**
+1. Run the downloaded `.exe` installer.
+2. Accept the licence agreement and click **Next** through all the steps.
+3. ✅ Tick **"Add to PATH"** and **"Open with Code"** options when offered — these are very useful.
+4. Click **Install**, then **Finish**.
+
+**Mac:**
+1. Open the downloaded `.zip` file — it extracts a `Visual Studio Code.app` file.
+2. Drag **Visual Studio Code.app** into your **Applications** folder.
+3. Open it from Applications (or Spotlight: `Cmd + Space`, type `code`).
+
+**Linux:**
+Follow the instructions at **https://code.visualstudio.com/docs/setup/linux** for your distro.
+
+### Step 3: Open the project folder
+
+1. Open VS Code.
+2. Go to **File → Open Folder…**
+3. Navigate to the `reveal_js_CodeChallenge` folder and click **Open**.
+4. You'll see all the project files in the left-hand **Explorer** panel.
+
+### Step 4: Install the recommended extension (optional but helpful)
+
+Search for **"Live Server"** in the Extensions panel (`Ctrl+Shift+X` / `Cmd+Shift+X`) and install it.
+It lets you right-click `quiz.html` → **Open with Live Server** so the browser auto-refreshes whenever you save.
+
+> 💡 You can also just double-click `quiz.html` in Finder / File Explorer to open it in a browser — Live Server is a bonus, not a requirement.
 
 ### Estimated time
 **2–3 hours** including a demo at the end.
